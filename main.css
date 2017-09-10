@@ -68,7 +68,7 @@ time {
     height: 1em;
     transform: rotate(45deg);
     width: 1em;
-  }
+}
   .search:before {
     border-radius: 0 0 1px 1px;
     box-shadow: inset 0 0 0 32px;
@@ -79,7 +79,7 @@ time {
     top: 1.4em;
     transform: translateY(-50%);
     width: 4px;
-  }
+}
 
 nav h2 {
     display: inline-block;
@@ -100,9 +100,11 @@ nav li {
 main li {
     border-bottom: solid 1px #00AA50;
     box-sizing: border-box;
-    font-size: 1.2em;
     margin: 0;
     padding: 0.5rem 1rem;
+}
+li h3 {
+    font-size: 1.2em;
 }
 .heading {
     background: #00AA50;
@@ -113,7 +115,7 @@ main li {
     background: #fff;
     border: solid 1px #00AA50;
     border-top: none;
-    max-height: 2em;
+    max-height: 2.5em;
     overflow: hidden;
 }
 .question h3 {
@@ -126,11 +128,16 @@ main li {
     box-shadow: 2px 4px 6px #888;
 }
 
+.see-also {
+    font-size: 0.8em;
+}
+
 #latest-container h3 {
     margin: 0.5rem 0;
 }
 #latest-container p {
     margin: 0;
+    text-align: justify;
 }
 .author {
     font-size: 0.8em;
@@ -176,24 +183,32 @@ main li {
     main {
         display: grid;
         grid-template-columns: 3fr 1fr;
-        grid-template-rows: 2em calc(100vh - 2em) auto;
+        grid-template-rows: 2em calc(100vh - 2em) auto auto;
         grid-template-areas: 
         "nav nav"
         "overview latest"
-        "questions latest";
+        "questions latest"
+        "text latest";
     }
     #hero-container {
+        background-position-x: 37.5%;
         margin-right: -25vw;
-        padding-right: 25%;
+        padding-right: 25vw;
     }
     #overview-container {
         grid-area: overview;
-        margin: 0 auto;
-        max-width: 60em;
+        padding: 1em;
     }
     #question-container {
         grid-area: questions;
         margin: 2em;
+    }
+    #text-container {
+        grid-area: text;
+        padding: 2em;
+    }
+    #text-container p {
+        padding: 0 2rem;
     }
     #latest-container {
         background: rgba(255,255,255,0.6);
